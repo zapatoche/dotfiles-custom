@@ -1,0 +1,13 @@
+# ~/.tmuxinator/salsacaribe.yml
+# you can make as many tabs as you wish...
+
+project_name: salsacaribecouk
+project_root: ~/Dropbox/projects/salsacaribe/salsacaribecouk.github.com/
+rvm: 1.9.3
+tabs:
+  - editor: vim
+  - console: 
+      layout: even-vertical
+      panes:
+        - compass watch
+        - Jekyll --server

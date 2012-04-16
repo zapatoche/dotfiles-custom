@@ -1,0 +1,15 @@
+#!/bin/sh
+tmux has-session -t salsacaribe
+if [ $? != 0 ]
+then
+  tmux new-session -s salsacaribe -n editor -d
+  tmux send-keys -t salsacaribe 'cd ~/devproject' C-m 
+  tmux send-keys -t salsacaribe 'vim' C-m
+  tmux split-window -v -t salsacaribe
+  tmux select-layout -t salsacaribe even-horizontal
+  tmux send-keys -t salsacaribe:1.2 'cd ~/devproject' C-m 
+  tmux new-window -n console -t salsacaribe
+  tmux send-keys -t salsacaribe:2 'cd ~/devproject' C-m 
+  tmux select-window -t salsacaribe:1
+fi
+tmux attach -t salsacaribe
