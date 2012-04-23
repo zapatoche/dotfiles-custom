@@ -21,3 +21,9 @@ set showtabline=2
 colors solarized
 set background=dark
 syntax enable
+
+" highlight Search     ctermfg=Black      ctermbg=Red     cterm=NONE
+
+" hi search cterm=none ctermbg=14 ctermfg=15
+hi Search gui=reverse
+hi CursorLine gui=reverse guifg=cadetBlue guibg=white
