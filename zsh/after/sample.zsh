@@ -21,3 +21,9 @@ cdpath=($HOME $HOME/Desktop/bwin.party $HOME/github $HOME/Dropbox $HOME/Dropbox/
 # Fancy globbing http://linuxshellaccount.blogspot.com/2008/07/fancy-globbing-with-zsh-on-linux-and.html
 setopt extendedglob
 
+#haxe library
+export HAXE_LIBRARY_PATH="$(brew --prefix)/share/haxe/std"
+
+
+#tmuxinator path
+[[ -s $HOME/.tmuxinator/scripts/tmuxinator ]] && source $HOME/.tmuxinator/scripts/tmuxinator
