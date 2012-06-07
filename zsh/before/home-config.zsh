@@ -2,8 +2,7 @@
 bindkey '^R' history-incremental-search-backward
 
 #Add path to our custom bins
-export PATH=/Users/yannicks/.rvm/gems/ruby-1.9.3-p165/bin:/Users/yannicks/.rvm/gems/ruby-1.9.3-p165@global/bin:/Users/yannicks/.rvm/rubies/ruby-1.9.3-p165/bin:/Users/yannicks/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-export PATH=$PATH:/Users/yannicks/bin
+export PATH=/Users/yannickschall/.rvm/gems/ruby-1.9.3-p0/bin:/Users/yannickschall/.rvm/gems/ruby-1.9.3-p0@global/bin:/Users/yannickschall/.rvm/rubies/ruby-1.9.3-p0/bin:/Users/yannickschall/.rvm/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH=$PATH:$yadr/bin:$yadr/bin/yadr
 
 #Always pushd when changing directory
