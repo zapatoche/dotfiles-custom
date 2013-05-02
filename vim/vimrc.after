@@ -1,0 +1,35 @@
+colorscheme delek
+" set au FocusLost * silent! wa
+
+" disable arrow keys
+noremap <Up> <NOP>
+noremap <Down> <NOP>
+noremap <Left> <NOP>
+noremap <Right> <NOP>
+
+set rnu
+
+if has ("gui_running")
+  au BufEnter * :set rnu
+  au BufLeave * :set nu
+  au WinEnter * :set rnu
+  au WinLeave * :set nu
+  au InsertEnter * :set nu
+  au InsertLeave * :set rnu
+  au FocusLost * :set nu
+  au FocusGained * :set rnu
+  colorscheme solarized
+endif
+
+nnoremap <F3> :NumbersToggle<CR>
+
+inoremap jj <esc><C-r>
+
+highlight Search  ctermfg=Black  ctermbg=Yellow  cterm=NONE  gui=reverse
+
+" autocomplete and corrections
+" source ~/.yadr/vim/bundle/git:--github.com-panozzaj-vim-autocorrect/autocorrect.vim
+iabbrev aling align
+iabbrev valing valign
+
+
