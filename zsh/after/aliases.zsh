@@ -19,3 +19,6 @@ alias scl='screen -list'
 
 # finder  
 alias ql='qlmanage -p'
+
+# meteor
+alias mrts='mrt --settings settings.json'
