@@ -17,3 +17,6 @@ setopt menucomplete
 unalias run-help
 autoload run-help
 HELPDIR=/usr/local/share/zsh/help
+
+export NVM_DIR="$HOME/.nvm"
+  . "$(brew --prefix nvm)/nvm.sh"

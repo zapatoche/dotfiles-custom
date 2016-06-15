@@ -33,3 +33,4 @@ iabbrev aling align
 iabbrev valing valign
 
 
+nnoremap <silent> <C-z> :sus<CR>
