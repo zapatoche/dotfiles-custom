@@ -1,0 +1,33 @@
+autocmd BufWritePre * StripWhitespace
+set hlsearch
+hi Search cterm=NONE ctermfg=black ctermbg=white
+hi Visual guibg=NONE gui=NONE cterm=reverse ctermfg=White
+set textwidth=0
+colorscheme elflord
+set rnu!
+noremap <silent><Leader>/ :nohls<CR>
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap <leader><leader>s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <leader><Leader>l <Plug>(easymotion-bd-jk)
+nmap <Leader><leader> l <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
+
+map <leader><Leader>L <Plug>(easymotion-lineforward)
+map <leader><leader>J <plug>(easymotion-j)
+map <leader><leader>K <plug>(easymotion-k)
+map <leader><leader>H <plug>(easymotion-linebackward)
+
+" undotree setting
+if has("persistent_undo")
+  set undodir=~/.undodir/
+  set undofile
+endif
