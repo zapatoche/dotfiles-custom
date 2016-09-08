@@ -31,3 +31,21 @@ if has("persistent_undo")
   set undodir=~/.undodir/
   set undofile
 endif
+
+" Disable inherited syntastic
+let g:syntastic_mode_map = {
+  \ "mode": "passive",
+  \ "active_filetypes": [],
+  \ "passive_filetypes": [] }
+
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
+let g:neomake_elixir_enabled_makers = ['csslint','stylelint','scss-lint','sass-lint','stylint','jshint','eshint','coffeelint', 'proselint','markdownlint','rubocop','rubylint','yamllint','mix']
+let g:neomake_elixir_mix_maker = {
+  \ 'args': ['compile'],
+  \ 'errorformat':
+  \ '** %s %f:%l: %m,' .
+  \ '%f:%l: warning: %m'
+  \ }
+
+autocmd! BufWritePost * Neomake
