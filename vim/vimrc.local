@@ -32,17 +32,36 @@ if has("persistent_undo")
   set undofile
 endif
 
+"write current file as sudo
+cmap w!! w !sudo tee > /dev/null %
+
+"set default clipboard for tmux compatibility
+
 " Disable inherited syntastic
-let g:syntastic_mode_map = {
-  \ "mode": "passive",
-  \ "active_filetypes": [],
-  \ "passive_filetypes": [] }
+" let g:syntastic_mode_map = {
+"   \ "mode": "passive",
+"   \ "active_filetypes": [],
+"   \ "passive_filetypes": [] }
+"
+" let g:neomake_serialize = 1
+" let g:neomake_serialize_abort_on_error = 1
+" let g:neomake_enabled_makers = ['csslint','stylelint','scss-lint','sass-lint','stylint','jshint','eshint','coffeelint', 'proselint','markdownlint','rubocop','rubylint','yamllint','mix']
+"
+" autocmd! BufWritePost * Neomake
 
-let g:neomake_serialize = 1
-let g:neomake_serialize_abort_on_error = 1
-let g:neomake_enabled_makers = ['csslint','stylelint','scss-lint','sass-lint','stylint','jshint','eshint','coffeelint', 'proselint','markdownlint','rubocop','rubylint','yamllint','mix']
+"1 Syntastic error
+" https://github.com/fish-shell/fish-shell/issues/2701
+" let g:syntastic_shell = "/bin/sh"
+" set notbs
+"
+let g:fzf_command_prefix = 'Fzf'
 
-autocmd! BufWritePost * Neomake
-
-" Use deoplete.
-let g:deoplete#enable_at_startup = 1
+" function! s:fzf_statusline()
+"   " Override statusline as you like
+"   highlight fzf1 ctermfg=161 ctermbg=251
+"   highlight fzf2 ctermfg=23 ctermbg=251
+"   highlight fzf3 ctermfg=237 ctermbg=251
+"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
+" endfunction
+"
+" autocmd! User FzfStatusLine call <SID>fzf_statusline()
