@@ -35,17 +35,28 @@ endif
 "write current file as sudo
 cmap w!! w !sudo tee > /dev/null %
 
+" accidental undo in insert mode
+inoremap <c-u> <c-g>u<c-u>
+inoremap <c-w> <c-g>u<c-w>
+
 "set default clipboard for tmux compatibility
+" set clipboard=unnamedplus
+
+" hilight current column
+set cursorcolumn
+
+" set status line to display current file full path
+set statusline+=%F
 
 " Disable inherited syntastic
-" let g:syntastic_mode_map = {
-"   \ "mode": "passive",
-"   \ "active_filetypes": [],
-"   \ "passive_filetypes": [] }
-"
-" let g:neomake_serialize = 1
-" let g:neomake_serialize_abort_on_error = 1
-" let g:neomake_enabled_makers = ['csslint','stylelint','scss-lint','sass-lint','stylint','jshint','eshint','coffeelint', 'proselint','markdownlint','rubocop','rubylint','yamllint','mix']
+let g:syntastic_mode_map = {
+  \ "mode": "passive",
+  \ "active_filetypes": [],
+  \ "passive_filetypes": [] }
+
+let g:neomake_serialize = 1
+let g:neomake_serialize_abort_on_error = 1
+let g:neomake_enabled_makers = ['csslint','stylelint','scss-lint','sass-lint','stylint','jshint','eshint','coffeelint', 'proselint','markdownlint','rubocop','rubylint','yamllint','mix']
 "
 " autocmd! BufWritePost * Neomake
 
@@ -56,12 +67,25 @@ cmap w!! w !sudo tee > /dev/null %
 "
 let g:fzf_command_prefix = 'Fzf'
 
-" function! s:fzf_statusline()
-"   " Override statusline as you like
-"   highlight fzf1 ctermfg=161 ctermbg=251
-"   highlight fzf2 ctermfg=23 ctermbg=251
-"   highlight fzf3 ctermfg=237 ctermbg=251
-"   setlocal statusline=%#fzf1#\ >\ %#fzf2#fz%#fzf3#f
-" endfunction
-"
-" autocmd! User FzfStatusLine call <SID>fzf_statusline()
+
+" Neovim settings
+let g:python_host_prog = '/usr/local/bin/python2'
+let g:python3_host_prog = '/usr/local/bin/python3'
+
+
+
+
+" elm formatting
+let g:elm_format_autosave = 1
+command -nargs=? -complete=file ElmMake call elm#Make(<f-args>)
+command ElmMakeMain call elm#Make("Main.elm")
+command -nargs=? -complete=file ElmTest call elm#Test(<f-args>)
+command ElmRepl call elm#Repl()
+command ElmErrorDetail call elm#ErrorDetail()
+command ElmShowDocs call elm#ShowDocs()
+command ElmBrowseDocs call elm#BrowseDocs()
+command ElmFormat call elm#Format()
+
+augroup format_elm " {
+  autocmd BufWritePost *.elm silent execute "ElmFormat"
+augroup END " }
