@@ -1,0 +1,1 @@
+/Users/yannickschall/.config/fisherman/bd/completions/bd.fish

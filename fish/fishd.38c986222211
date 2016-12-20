@@ -5,7 +5,10 @@ SET Z_CMD:z
 SET Z_DATA:/Users/yannickschall/\x2ez
 SET Z_EXCLUDE:/Users/yannickschall
 SET __fish_init_1_50_0:\x1d
+SET __fish_init_2_39_8:\x1d
 SET __fish_init_2_3_0:\x1d
+SET __tf_func:function\x20__tf_alias\x20\x2dd\x20\x22Correct\x20your\x20previous\x20console\x20command\x22\x3b\x20\x20set\x20\x2dl\x20fucked_up_command\x20\x24history\x5b1\x5d\x3b\x20\x20env\x20TF_ALIAS\x3d__tf_alias\x20PYTHONIOENCODING\x3dutf\x2d8\x20thefuck\x20\x24fucked_up_command\x20\x7c\x20read\x20\x2dl\x20unfucked_command\x3b\x20\x20if\x20\x5b\x20\x22\x24unfucked_command\x22\x20\x21\x3d\x20\x22\x22\x20\x5d\x3b\x20\x20\x20\x20eval\x20\x24unfucked_command\x3b\x20\x20\x20\x20history\x20\x2d\x2ddelete\x20\x24fucked_up_command\x3b\x20\x20\x20\x20history\x20\x2d\x2dmerge\x20\x5e\x20/dev/null\x3b\x20\x20end\x3bend\x3b
+SET __tf_vers:The\x20Fuck\x203\x2e11\x20using\x20Python\x202\x2e7\x2e10
 SET fish_color_autosuggestion:555\x1eyellow
 SET fish_color_command:005fd7\x1epurple
 SET fish_color_comment:red
@@ -27,11 +30,11 @@ SET fish_color_selection:\x2d\x2dbackground\x3dpurple
 SET fish_color_user:green
 SET fish_color_valid_path:\x2d\x2dunderline
 SET fish_greeting:Welcome\x20to\x20fish\x2c\x20the\x20friendly\x20interactive\x20shell\x0aType\x20\x1b\x5b32mhelp\x1b\x5b30m\x1b\x28B\x1b\x5bm\x20for\x20instructions\x20on\x20how\x20to\x20use\x20fish
-SET fish_key_bindings:fish_default_key_bindings
+SET fish_key_bindings:fish_vi_key_bindings
 SET fish_pager_color_completion:normal
 SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
-SET fisher_active_prompt:vibrant
-SET fisher_dependency_count:vibrant\x1episces\x1egetopts\x1espin\x1egitignore\x1egetopts\x1ez
+SET fish_user_paths:/Users/yannickschall/\x2efzf/bin
+SET fisher_dependency_count:bd\x1ehost_info\x1elookup\x1erbenv\x1egetopts\x1ez
 SET pisces_pairs:\x28\x2c\x29\x1e\x5b\x2c\x5d\x1e\x7b\x2c\x7d\x1e\x22\x2c\x22\x1e\x27\x2c\x27

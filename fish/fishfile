@@ -1,6 +1,9 @@
-fisherman/await
+0rax/fish-bd
 fisherman/fzf
 fisherman/getopts
-fisherman/last_job_id
+fisherman/git_porcelain
+fisherman/host_info
+nyarly/fish-lookup
+laughedelic/pisces
 fisherman/rbenv
 fisherman/z

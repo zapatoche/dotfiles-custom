@@ -1,4 +1,1 @@
-if not type -q "fzf"
-  echo "fzf is not installed. Installing..."
-  __fzf_install
-end
+/Users/yannickschall/.config/fisherman/fzf/conf.d/__fzf_check.fish
