@@ -34,4 +34,5 @@ SET fish_pager_color_description:555\x1eyellow
 SET fish_pager_color_prefix:cyan
 SET fish_pager_color_progress:cyan
 SET fish_user_paths:/Users/yannick/\x2efzf/bin
+SET fisher_dependency_count:menu\x1eget_file_age\x1eawait\x1elast_job_id\x1efnm
 SET pisces_pairs:\x28\x2c\x29\x1e\x5b\x2c\x5d\x1e\x7b\x2c\x7d\x1e\x22\x2c\x22\x1e\x27\x2c\x27

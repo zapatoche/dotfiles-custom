@@ -1,1 +1,7 @@
-/Users/yannickschall/.config/fisherman/fnm/functions/__fnm_mirror.fish
+function __fnm_mirror
+    if test -z "$fnm_mirror"
+        printf "%s\n" "http://nodejs.org/dist"
+    else
+        printf "%s\n" "$fnm_mirror[1]"
+    end
+end

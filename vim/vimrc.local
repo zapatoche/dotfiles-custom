@@ -5,7 +5,14 @@ hi Visual guibg=NONE gui=NONE cterm=reverse ctermfg=White
 set textwidth=0
 colorscheme elflord
 set rnu!
-noremap <silent><Leader>/ :nohls<CR>
+
+" invisible characters settings
+set listchars=tab:»-,trail:·,eol:¬
+
+
+" easy motion
+noremap <leader><Leader>/ :set hlsearch!<CR>
+nnoremap <leader><leader><leader>/ :let @/ = ""<CR>
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
@@ -25,6 +32,7 @@ map <leader><Leader>L <Plug>(easymotion-lineforward)
 map <leader><leader>J <plug>(easymotion-j)
 map <leader><leader>K <plug>(easymotion-k)
 map <leader><leader>H <plug>(easymotion-linebackward)
+
 
 " undotree setting
 if has("persistent_undo")
@@ -72,7 +80,9 @@ let g:fzf_command_prefix = 'Fzf'
 let g:python_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
-
+" vim airline
+let g:airline_theme='raven'
+let g:airline#extensions#tabline#enabled = 0
 
 
 " elm formatting
@@ -89,3 +99,18 @@ command ElmFormat call elm#Format()
 augroup format_elm " {
   autocmd BufWritePost *.elm silent execute "ElmFormat"
 augroup END " }
+
+" find and replace
+command! -nargs=0 -bar Qargs execute 'args ' . QuickfixFilenames()
+function! QuickfixFilenames()
+  " Building a hash ensures we get each buffer only once
+  let buffer_numbers = {}
+  for quickfix_item in getqflist()
+    let buffer_numbers[quickfix_item['bufnr']] = bufname(quickfix_item['bufnr'])
+  endfor
+  return join(values(buffer_numbers))
+endfunctio
+
+
+" postcss autoprefixer command
+command AutoPref ! postcss --no-map --use autoprefixer --autoprefixer.browsers "last 2 versions,> 1%, ie >= 9" % -o %

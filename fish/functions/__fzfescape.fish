@@ -1,1 +1,0 @@
-/Users/yannickschall/.config/fisherman/fzf/functions/__fzfescape.fish

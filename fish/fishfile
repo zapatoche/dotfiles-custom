@@ -1,8 +1,11 @@
+fisherman/await
 0rax/fish-bd
 fisherman/fzf
+fisherman/get
 fisherman/getopts
 fisherman/git_porcelain
 fisherman/host_info
+fisherman/last_job_id
 nyarly/fish-lookup
 laughedelic/pisces
 fisherman/rbenv
